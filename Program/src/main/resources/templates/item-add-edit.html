@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактор услуги</title>
+    <div th:replace="~{commons :: head}"></div>
+</head>
+<body>
+
+
+
+<div class="site-container">
+
+    <div th:replace="~{commons :: headerFirst}"></div>
+    <div th:replace="~{commons :: headerSecond}"></div>
+
+
+    <div class="container">
+        <form action="/item/create" method="POST" th:object="${entity}">
+            <div class="row">
+                <div class="col">
+                    <h3>Создание / Редактирование услуги</h3>
+                </div>
+            </div>
+            <div class="row mainContainer blogBetween">
+                <div class="col-md-12">
+                    <table class="editTable ">
+                        <tbody>
+                        <tr>
+                            <th><label class="mx-2">Категория (Сервис)</label></th>
+                            <td>
+                                <select name="catId" id="catId" required>
+                                    <option th:if="${entity.type==null}" name="catId" th:each="cat : ${types}"
+                                            th:value="${cat.id}" th:text="${cat}"
+                                            th:selected="${entity.type==cat}"
+                                    ></option>
+                                    <option th:if="${entity.type!=null}" name="catId" th:each="cat : ${types}"
+                                            th:value="${cat.id}" th:text="${cat}"
+                                            th:selected="${entity.type.id==cat.id}"
+                                    ></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label class="mx-2">Название</label></th>
+                            <td><input type="text" th:field="*{name}" class="form-control" required/></td>
+                        </tr>
+                        <tr>
+                            <th><label class="mx-2">Цена</label></th>
+                            <td><input type="text" th:field="*{price}" class="form-control" required/></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p class="my-5 between">
+                        <input type="hidden" id="id" th:field="*{id}">
+                        <input type="button" class="myButton" value="Назад" onclick="history.back()"/>
+                        <input type="submit" class="myButton" value="Отправить">
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+    <div th:replace="~{commons :: footer}"></div>
+</div>
+<a href="#top" class="scroll-top animated-element template-arrow-up" title="Scroll to top"></a>
+<div class="background-overlay"></div>
+
+
+</body>
+</html>

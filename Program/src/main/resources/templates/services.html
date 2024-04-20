@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Сервис и услуги</title>
+    <!--meta-->
+    <div th:replace="~{commons :: head}"></div>
+</head>
+<body>
+<div class="site-container">
+    <div th:replace="~{commons :: headerFirst}"></div>
+    <div th:replace="~{commons :: headerSecond}"></div>
+
+    <div class="theme-page padding-bottom-70">
+
+        <!--вы тут-->
+        <div class="row gray full-width page-header vertical-align-table">
+            <div class="row full-width padding-top-bottom-50 vertical-align-cell">
+                <div class="row">
+                    <div class="page-header-left">
+                        <h1>СЕРВИСЫ И УСЛУГИ</h1>
+                    </div>
+                    <div class="page-header-right">
+                        <div class="bread-crumb-container">
+                            <label>ВЫ СЕЙЧАС ЗДЕСЬ:</label>
+                            <ul class="bread-crumb">
+                                <li>
+                                    <a title="Home" href="index">
+                                        ГЛАВНАЯ
+                                    </a>
+                                </li>
+                                <li class="separator">
+                                    &#47;
+                                </li>
+                                <li>
+                                    СЕРВИСЫ И УСЛУГИ
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix">
+
+            <div class="row" style="margin: 30px auto; "
+                 th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">
+                <div class="col">
+                    <a class="more submit-contact-form" href="/services/edit">Добавить категорию сервиса</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <div class="row">
+                <ul class="services-list clearfix padding-top-70">
+                    <li th:each="entity : ${list}">
+                        <a th:href="'services/items/'+${entity.id}">
+                            <img th:src="${entity.image1}">
+                        </a>
+                        <h4 class="box-header">
+                            <a th:href="'services/items/'+${entity.id}" th:text="${entity.name}">
+                                ENGINE DIAGNOSTICS
+                                <span class="template-arrow-menu"></span>
+                            </a>
+                        </h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!--footer-->
+    <div th:replace="~{commons :: footer}"></div>
+</div>
+<a href="#top" class="scroll-top animated-element template-arrow-up" title="Scroll to top"></a>
+<div class="background-overlay"></div>
+
+</body>
+</html>

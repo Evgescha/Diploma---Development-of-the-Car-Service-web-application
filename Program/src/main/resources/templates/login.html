@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Страница входа</title>
+    <div th:replace="~{commons :: head}"></div>
+    <style>
+        td {
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="site-container">
+    <div th:replace="~{commons :: headerFirst}"></div>
+    <div th:replace="~{commons :: headerSecond}"></div>
+
+    <!--contact form-->
+    <div class="theme-page padding-bottom-66">
+        <div class="clearfix">
+
+
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-center">Войдите или зарегистрируйтесь</h2>
+                    <h3 th:if="${success}" class="text-center" th:text="${success}">Ошибка регистрации. Проверьте
+                        уникальность имени и попробуйте еще раз</h3>
+                </div>
+            </div>
+
+            <div class="row page-margin-top">
+
+                <div class="row">
+                    <fieldset class="column column-1-2">
+                        <form class="contact-form" method="post" action="/login1">
+                            <h3>Введите данные для входа</h3>
+                            <input class="text-input" name="username" type="text" value=""
+                                   placeholder="Ваш логин" required>
+                            <input class="text-input" name="password" type="password" value=""
+                                   placeholder="Ваш пароль" required>
+                            <div class="row margin-top-20 padding-bottom-20">
+                                <input class="more submit-contact-form" type="submit" value="Отправить">
+                            </div>
+                        </form>
+                    </fieldset>
+                    <fieldset class="column column-1-2">
+                        <form class="contact-form" method="post" action="/registration">
+                            <h3>Введите данные для регистрации</h3>
+                            <input type="text" name="fio" required class="text-input" placeholder="Ваше ФИО">
+                            <input type="date" name="dateBorn" required class="text-input" placeholder="Дата рождения">
+                            <input type="text" name="phone" required class="text-input" placeholder="Номер телефона">
+                            <input type="email" name="email" required class="text-input" placeholder="Почта">
+                            <input type="text" name="username" required class="text-input" placeholder="Ваш логин">
+                            <input type="password" name="password" required class="text-input" placeholder="Пароль">
+                            <div class="row margin-top-20 padding-bottom-20">
+                                <input class="more submit-contact-form" type="submit" value="Отправить">
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div th:replace="~{commons :: footer}"></div>
+    </div>
+    <a href="#top" class="scroll-top animated-element template-arrow-up" title="Scroll to top"></a>
+    <div class="background-overlay"></div>
+</body>
+</html>

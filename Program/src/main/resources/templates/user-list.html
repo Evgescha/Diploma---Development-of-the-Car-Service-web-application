@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ПОльзователи</title>
+    <div th:replace="~{commons :: head}"></div>
+    <style>
+        td{
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="site-container">
+    <div th:replace="~{commons :: headerFirst}"></div>
+    <div th:replace="~{commons :: headerSecond}"></div>
+
+    <!--contact form-->
+    <div class="theme-page padding-bottom-66">
+        <div class="clearfix">
+
+           <div class="row">
+                <div class="col">
+                    <h3 class="text-center">Пользователи системы</h3>
+                </div>
+            </div>
+
+            <div class="гыукs-list">
+                <div class="row item p-3">
+                    <div class="order-food">
+                        <div class="order-food-item">
+                            <table class="table table-striped table-responsive-md">
+                                <thead>
+                                <tr>
+                                    <th>ФИО</th>
+                                    <th>Почта</th>
+                                    <th>Телефон</th>
+                                    <th>Дата рождения</th>
+                                    <th>Логин</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="entity1 : ${list}">
+                                    <td th:text="${entity1.fio}"></td>
+                                    <td th:text="${entity1.email}"></td>
+                                    <td th:text="${entity1.phone}"></td>
+                                    <td th:text="${entity1.dateBorn}"></td>
+                                    <td th:text="${entity1.username}"></td>
+                                    <td><a th:href="'/user/delete/'+${entity1.id}">Удалить</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div th:replace="~{commons :: footer}"></div>
+</div>
+<a href="#top" class="scroll-top animated-element template-arrow-up" title="Scroll to top"></a>
+<div class="background-overlay"></div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${entity.name}"></title>
+    <!--meta-->
+    <div th:replace="~{commons :: head}"></div>
+
+    <style>
+        td {
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="site-container">
+    <div th:replace="~{commons :: headerFirst}"></div>
+    <div th:replace="~{commons :: headerSecond}"></div>
+
+    <div class="theme-page">
+        <!--you are here				-->
+        <div class="row gray full-width page-header vertical-align-table">
+            <div class="row full-width padding-top-bottom-50 vertical-align-cell">
+                <div class="row">
+                    <div class="page-header-left">
+                        <h1 th:text="${entity.name}">ENGINE DIAGNOSTICS</h1>
+                    </div>
+                    <div class="page-header-right">
+                        <div class="bread-crumb-container">
+                            <label>ВЫ СЕЙЧАС ЗДЕСЬ:</label>
+                            <ul class="bread-crumb">
+                                <li>
+                                    <a title="HOME" href="/index">
+                                        ГЛАВНАЯ
+                                    </a>
+                                </li>
+                                <li class="separator">
+                                    &#47;
+                                </li>
+                                <li>
+                                    <a title="Our Services" href="/services">
+                                        НАШИ УСЛУГИ
+                                    </a>
+                                </li>
+                                <li class="separator">
+                                    &#47;
+                                </li>
+                                <li th:text="${entity.name}">
+                                    ENGINE DIAGNOSTICS
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <div class="row margin-top-70">
+                <div class="column column-1-4">
+                    <ul class="vertical-menu">
+                        <li th:each="listItem : ${list}">
+                            <a th:href="'/services/items/'+${listItem.id}" th:title="${listItem.name}">
+                                <div th:text="${listItem.name}"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column-3-4">
+                    <div class="row">
+                        <div class="column column-1-2">
+                            <a th:href="${entity.image1}" class="prettyPhoto re-preload" th:title="${entity.name}">
+                                <img th:src="${entity.image1}" alt='img'>
+                            </a>
+                        </div>
+                        <div class="column column-1-2">
+                            <a th:href="${entity.image2}" class="prettyPhoto re-preload" th:title="${entity.name}">
+                                <img th:src="${entity.image2}" alt='img'>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin: 30px auto; display: flex!important;"
+                         th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">
+                        <div class="col-6">
+                            <a class="more submit-contact-form" th:href="'/services/edit/'+${entity.id}">Изменить
+                                категорию</a>
+                        </div>
+                        <div class="col-6">
+                            <a class="more submit-contact-form" th:href="'/services/delete/'+${entity.id}">Удалить
+                                категорию</a>
+                        </div>
+                    </div>
+
+
+                    <div class="row page-margin-top">
+                        <div class="column-1-1">
+                            <h3 class="box-header">ОПИСАНИЕ СЕРВИСА</h3>
+                            <p class="margin-top-20" th:text="${entity.description}">DESCRIPTION</p>
+                            <h3 class="box-header page-margin-top">Цены на услуги</h3>
+                            <table class="margin-top-40">
+                                <tbody>
+                                <tr th:each="serv:${entity.items}">
+                                    <td th:text="${serv.name}">Front Brakes Repair</td>
+                                    <td th:text="${serv.price}">$49.95</td>
+                                    <td th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">
+                                        <a th:href="'/item/edit/'+${serv.id}">Редактировать</a>
+                                    </td>
+                                    <td th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_USER')}">
+                                        <a th:href="'/backet/addToBacket/'+${serv.id}">В корзину</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="margin: 30px auto;"
+                         th:if="${#request.userPrincipal ==null}">
+                        <div class="col">
+                            <a class="more submit-contact-form" href="/login">Войдите в систему для оформления
+                                заказа</a>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin: 30px auto;"
+                         th:if="${#request.userPrincipal != null && #request.isUserInRole('ROLE_ADMIN')}">
+                        <div class="col">
+                            <a class="more submit-contact-form" href="/item/edit/">Добавить услугу для категории</a>
+                        </div>
+                    </div>
+
+
+                    <div th:replace="~{commons :: whyMeShort}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div th:replace="~{commons :: footer}"></div>
+</div>
+<a href="#top" class="scroll-top animated-element template-arrow-up" title="Scroll to top"></a>
+<div class="background-overlay"></div>
+
+</body>
+</html>

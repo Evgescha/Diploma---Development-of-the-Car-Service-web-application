@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Автосервис</title>
+<div th:replace="~{commons :: head}"></div>
+</head>
+<body>
+<div class="site-container">
+
+    <div th:replace="~{commons :: headerFirst}"></div>
+    <div th:replace="~{commons :: headerSecond}"></div>
+
+    <!--index slider-->
+    <div class="revolution-slider-container">
+        <div class="revolution-slider">
+            <ul style="display: none;">
+                <!-- SLIDE 1 -->
+                <li data-transition="fade" data-masterspeed="500" data-slotamount="1" data-delay="6000">
+                    <!-- MAIN IMAGE -->
+                    <img src="images/slider/image_01.jpg" alt="slidebg1" data-bgfit="cover">
+                    <!-- LAYERS -->
+                    <!-- LAYER 01 -->
+                    <div class="tp-caption"
+                         data-frames='[{"delay":500,"speed":1200,"from":"y:-40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+                         data-x="center"
+                         data-y="97"
+                    >
+                        <div class="hexagon">
+                            <div class="sl-small-car-oil"></div>
+                        </div>
+                    </div>
+                    <!-- LAYER 02 -->
+                    <div class="tp-caption"
+                         data-frames='[{"delay":900,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+                         data-x="center"
+                         data-y="262"
+                    >
+                        <h2>СДЕЛАЙТЕ ТАК, ЧТОБЫ ВАШ АВТОМОБИЛЬ ПРОСЛУЖИЛ ДОЛЬШЕ</h2>
+                    </div>
+                    <!-- LAYER 03 -->
+                    <div class="tp-caption"
+                         data-frames='[{"delay":1100,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+                         data-x="center"
+                         data-y="343"
+                    >
+                        <p class="description">Бесплатная замена масла, 15 апреля. Только если у вас есть "5" на номерном знаке.</p>
+                    </div>
+                    <!-- LAYER 04 -->
+                    <div class="tp-caption"
+                         data-frames='[{"delay":1300,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+                         data-x="center"
+                         data-y="441"
+                    >
+                    </div>
+                    <!-- / -->
+                </li>
+                <!-- SLIDE 2 -->
+                <li data-transition="fade" data-masterspeed="500" data-slotamount="1" data-delay="6000">
+                    <!-- MAIN IMAGE -->
+                    <img src="images/slider/image_02.jpg" alt="slidebg2" data-bgfit="cover">
+                    <!-- LAYERS -->
+                    <!-- LAYER 01 -->
+                    <div class="tp-caption customin customout"
+                         data-frames='[{"delay":500,"speed":1200,"from":"y:-40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+                         data-x="center"
+                         data-y="97"
+                    >
+                        <div class="hexagon">
+                            <div class="sl-small-car"></div>
+                        </div>
+                    </div>
+                    <!-- LAYER 02 -->
+                    <div class="tp-caption customin customout"
+                         data-frames='[{"delay":900,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+                         data-x="center"
+                         data-y="262"
+                    >
+                        <h2>НАЙДИТЕ ШИНЫ, СООТВЕТСТВУЮЩИЕ ВАШИМ ПОТРЕБНОСТЯМ</h2>
+                    </div>
+                    <!-- LAYER 03 -->
+                    <div class="tp-caption customin customout"
+                         data-frames='[{"delay":1100,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+                         data-x="center"
+                         data-y="343"
+                    >
+                        <p class="description">Воспользуйтесь нашими самыми низкими ценами, которые автоматически включают купоны.</p>
+                    </div>
+                    <!-- LAYER 04 -->
+                    <div class="tp-caption customin customout"
+                         data-frames='[{"delay":1300,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+                         data-x="center"
+                         data-y="441"
+                    >
+                    </div>
+                    <!-- / -->
+                </li>
+
+                <!-- SLIDE 3 -->
+                <li data-transition="fade" data-masterspeed="500" data-slotamount="1" data-delay="6000">
+                    <!-- MAIN IMAGE -->
+                    <img src="images/slider/image_03.jpg" alt="slidebg3" data-bgfit="cover">
+                    <!-- LAYERS -->
+                    <!-- LAYER 01 -->
+                    <div class="tp-caption customin customout"
+                         data-frames='[{"delay":500,"speed":1200,"from":"y:-40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+                         data-x="center"
+                         data-y="97"
+                    >
+                        <div class="hexagon">
+                            <div class="sl-small-car-checklist"></div>
+                        </div>
+                    </div>
+                    <!-- LAYER 02 -->
+                    <div class="tp-caption customin customout"
+                         data-frames='[{"delay":900,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+                         data-x="center"
+                         data-y="262"
+                    >
+                        <h2>ОПЫТНЫЕ ТЕХНИЧЕСКИЕ СПЕЦИАЛИСТЫ, КОНКУРЕНТОСПОСОБНЫЕ ЦЕНЫ</h2>
+                    </div>
+                    <!-- LAYER 03 -->
+                    <div class="tp-caption customin customout"
+                         data-frames='[{"delay":1100,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+                         data-x="center"
+                         data-y="343"
+                    >
+                        <p class="description">Мы стремимся завоевать ваше доверие, предоставляя вам опыт и ценность, которые вы ожидаете.</p>
+                    </div>
+                    <!-- LAYER 04 -->
+                    <div class="tp-caption customin customout"
+                         data-frames='[{"delay":1300,"speed":1200,"from":"y:40;o:0;","ease":"easeInOutExpo"},{"delay":"wait","speed":500,"to":"o:0;","ease":"easeInOutExpo"}]'
+
+                         data-x="center"
+                         data-y="441"
+                    >
+                    </div>
+                    <!-- / -->
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="theme-page">
+        <div class="clearfix">
+            <!--AUTO REPAIR SERVICES-->
+            <div class="row full-width page-padding-top-section">
+                <div class="row">
+                    <h2 class="box-header">АВТОМАСТЕРСКАЯ</h2>
+                    <p class="description align-center">Мы предлагаем полный спектр гаражных услуг владельцам транспортных средств, расположенных в районе Тусона.<br>Наши преподаватели знают, как обращаться с широким спектром автосервисов.</p>
+                    <ul class="services-list clearfix page-margin-top">
+                        <li>
+                                <img src="images/samples/390x260/image_01.jpg" alt="">
+                            <h4 class="box-header">ДИАГНОСТИКА ДВИГАТЕЛЕЙ</h4>
+                        </li>
+                        <li>
+                                <img src="images/samples/390x260/image_02.jpg" alt="">
+                            <h4 class="box-header">ЗАМЕНА МАСЛА</h4>
+                        </li>
+                        <li>
+                                <img src="images/samples/390x260/image_03.jpg" alt="">
+                            <h4 class="box-header">РЕМНИ И ШЛАНГИ</h4>
+                        </li>
+                    </ul>
+                    <div class="align-center margin-top-40 padding-bottom-87">
+                        <a class="more" href="services"
+                           title="VIEW ALL SERVICES"><span>СМОТРЕТЬ ВСЕ УСЛУГИ</span></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--auto and marks-->
+            <div class="row full-width gray flex-box page-margin-top-section">
+                <div class="column column-1-2 background-1">
+                    <a class="flex-hide" href="service-one.html" title="Tiling and Painting">
+                        <img src="images/samples/960x680/image_01.jpg" alt="">
+                    </a>
+                </div>
+                <div class="column column-1-2 padding-bottom-66">
+                    <div class="row padding-left-right-100">
+                        <h2 class="box-header page-margin-top-section">ОБСЛУЖИВАЕМЫЕ ТРАНСПОРТНЫЕ СРЕДСТВА</h2>
+                        <p class="description align-center">Мы предоставляем первоклассное техническое обслуживание для всех типов
+                            транспортных средств.<br>Мы сертифицированы для обслуживания и ремонта следующих марок:</p>
+                        <div class="row margin-top-30">
+                            <div class="column column-1-3">
+                                <ul class="list">
+                                    <li class="template-bullet">General Motors</li>
+                                    <li class="template-bullet">Land Rover</li>
+                                    <li class="template-bullet">Lexus</li>
+                                    <li class="template-bullet">Lincoln</li>
+                                    <li class="template-bullet">Mazda</li>
+                                </ul>
+                            </div>
+                            <div class="column column-1-3">
+                                <ul class="list">
+                                    <li class="template-bullet">Mercedes - Benz</li>
+                                    <li class="template-bullet">Mercury</li>
+                                    <li class="template-bullet">Mitsubishi</li>
+                                    <li class="template-bullet">Nissan</li>
+                                    <li class="template-bullet">Renault</li>
+                                </ul>
+                            </div>
+                            <div class="column column-1-3">
+                                <ul class="list">
+                                    <li class="template-bullet">Plymouth</li>
+                                    <li class="template-bullet">Pontiac Porsche</li>
+                                    <li class="template-bullet">Rover</li>
+                                    <li class="template-bullet">Saab</li>
+                                    <li class="template-bullet">Saleen</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="align-center margin-top-67 padding-bottom-20">
+                            <a class="more simple" href="services"
+                               title="VIEW FULL LIST"><span>СМОТРЕТЬ ВСЕ УСЛУГИ</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--image-->
+            <div class="row full-width padding-top-70 padding-bottom-66 parallax parallax-1">
+                <div class="row testimonials-container">
+                    <a href="#" class="slider-control left template-arrow-left-1"></a>
+                    <ul class="testimonials-list">
+                        <li>
+                            <div class="hexagon small">
+                                <div class="sl-small-pen"></div>
+                            </div>
+                            <p>"За последние несколько лет я взял здесь несколько семейных автомобилей, и все без исключения впечатления были выдающимися. Я бы очень рекомендовал это место всем, кто хочет отличного обслуживания, честной ценности и действительно замечательных людей".
+                            <h6>РОБЕРТ СМИТ</h6>
+                        </li>
+                        <li>
+                            <div class="hexagon small">
+                                <div class="sl-small-pen"></div>
+                            </div>
+                            <p>"За последние несколько лет я взял здесь несколько семейных автомобилей и без
+                                за исключением того, что опыт был выдающимся.
+                                Я бы очень рекомендовал это место всем, кто хочет отличного обслуживания, честной ценности
+                                и действительно замечательных людей".
+                            <h6>РОБЕРТ СМИТ</h6>
+                        </li>
+                        <li>
+                            <div class="hexagon small">
+                                <div class="sl-small-pen"></div>
+                            </div>
+                            <p>"За последние несколько лет я взял здесь несколько семейных автомобилей и без
+                                за исключением того, что опыт был выдающимся.
+                                Я бы очень рекомендовал это место всем, кто хочет отличного обслуживания, честной ценности
+                                и действительно замечательных людей".
+                            <h6>РОБЕРТ СМИТ</h6>
+                        </li>
+                    </ul>
+                    <a href="#" class="slider-control right template-arrow-left-1"></a>
+                </div>
+            </div>
+
+            <!--overview company-->
+            <div th:replace="~{commons :: companyOverview}"></div>
+
+            <!--image slider-->
+            <div class="row full-width page-margin-top-section">
+                <ul class="galleries-list clearfix page-margin-top">
+                    <li>
+                        <a href="gallery_tire_change.html" title="Tire Change">
+                            <img src="images/samples/480x320/image_07.jpg" alt="">
+                        </a>
+                        <div class="view align-center">
+                            <div class="vertical-align-table">
+                                <div class="vertical-align-cell">
+                                    <p class="description">Замена Шин</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="gallery_oil_change.html" title="Oil Change">
+                            <img src="images/samples/480x320/image_02.jpg" alt="">
+                        </a>
+                        <div class="view align-center">
+                            <div class="vertical-align-table">
+                                <div class="vertical-align-cell">
+                                    <p class="description">Замена масла</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="gallery_belts_hoses.html" title="Our Facility">
+                            <img src="images/samples/480x320/image_08.jpg" alt="">
+                        </a>
+                        <div class="view align-center">
+                            <div class="vertical-align-table">
+                                <div class="vertical-align-cell">
+                                    <p class="description">Наш Объект</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="gallery_brake_repair.html" title="Brakes Repair">
+                            <img src="images/samples/480x320/image_05.jpg" alt="">
+                        </a>
+                        <div class="view align-center">
+                            <div class="vertical-align-table">
+                                <div class="vertical-align-cell">
+                                    <p class="description">Ремонт тормозов</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!--popular question-->
+            <div th:replace="~{commons :: popularQuestion}"></div>
+
+            <!--carousel-->
+            <div class="row full-width top-border page-margin-top-section padding-bottom-50">
+                <div class="row">
+                    <div class="our-clients-list-container page-margin-top">
+                        <ul class="our-clients-list">
+                            <li>
+                                <img src="images/logos/logo_01.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_02.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_03.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_04.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_05.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_06.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_06.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_05.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_04.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_03.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_02.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_01.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_04.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_03.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_01.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/logos/logo_05.png" alt="">
+                            </li>
+                        </ul>
+                        <div class="our-clients-pagination"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--footer-->
+    <div th:replace="~{commons :: footer}"></div>
+</div>
+<a href="#top" class="scroll-top animated-element template-arrow-up" title="Scroll to top"></a>
+<div class="background-overlay"></div>
+</body>
+</html>
